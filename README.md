@@ -43,5 +43,8 @@ Data holds hidden insights, and visualizations unlock their true potential. In t
 2. **Module 2: D3.js**  
    Bind data to DOM, use scales, axes, draw simple shapes, transitions, layouts, and custom interactive visuals.
 
+## During the workshop - Where to Submit your Answers
+- Submit your module answers [here](charts-workshop-submit.netlify.app).
+
 ## Slides
 Slide deck can be found [here]().
