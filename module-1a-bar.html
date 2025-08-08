@@ -1,24 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Module 1A Bar (Starter)</title>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <style>
-    body { font-family: system-ui, sans-serif; padding: 1rem; }
-    canvas { max-width: 820px; width: 100%; height: 380px; border: 1px solid #e5e7eb; background: #fff; }
-  </style>
-  <script type="module">
-    const ctx = document.getElementById("chart").getContext("2d");
+  <head>
+    <meta charset="UTF-8" />
+    <title>Module 1A Bar (Starter)</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+        padding: 1rem;
+      }
+      canvas {
+        max-width: 820px;
+        width: 100%;
+        height: 380px;
+        border: 1px solid #e5e7eb;
+        background: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="chart"></canvas>
+    <script>
+      const ctx = document.getElementById('chart').getContext('2d')
 
-    // I DO
-    // Add your code here
+      const config = {
+        type: 'bar',
+        data: {
+          labels: ['red', 'blue', 'green', 'yellow', 'purple', 'orange'],
+          datasets: [
+            {
+              label: 'Votes',
+              data: [12, 19, 3, 5, 2, 3]
+            }
+          ]
+        }
+      }
 
-    // YOU DO
-    // Add your code here
+      const chart = new Chart(ctx, config)
 
-    // WE DO
-    // Add your code here
-  </script>
-</body>
+      // YOU DO
+      // Add your code here
+
+      // WE DO
+      // Add your code here
+    </script>
+  </body>
 </html>
