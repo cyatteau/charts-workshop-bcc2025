@@ -24,16 +24,6 @@
 
     <script>
       // I DO: draw initial circles
-      const data = [10, 30, 50, 70, 90];
-      const svg = d3.select('#chart');
-
-      svg.selectAll('circle')
-        .data(data)
-        .enter()
-        .append('circle')
-        .attr('cx', (d, i) => 80 + i * 120)
-        .attr('cy', 150)
-        .attr('r', d => d / 4);
 
       // YOU DO: on button click, transition radius and color
       //    • use d3.transition(), .duration(), and .attr()
