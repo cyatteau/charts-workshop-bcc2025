@@ -47,39 +47,6 @@
       const height = +svg.attr('height')
 
       // I DO: basic D3 line chart
-      // 2B – Line Charts
-      const data = [
-        { x: 0, y: 10 },
-        { x: 1, y: 40 },
-        { x: 2, y: 20 },
-        { x: 3, y: 80 },
-        { x: 4, y: 50 }
-      ]
-      const xScale = d3
-        .scaleLinear()
-        .domain(d3.extent(data, d => d.x)) // https://d3js.org/d3-array
-        .range([0, width]) // https://d3js.org/d3-scale
-      const yScale = d3
-        .scaleLinear()
-        .domain([0, d3.max(data, d => d.y)]) // https://d3js.org/d3-array
-        .range([height, 0]) // https://d3js.org/d3-scale
-
-      let curveMethod = d3.curveLinear // default interpolation
-
-      const lineGen = d3
-        .line()
-        .curve(curveMethod) // https://d3js.org/d3-shape
-        .x(d => xScale(d.x))
-        .y(d => yScale(d.y))
-
-      svg
-        .append('path')
-        .datum(data)
-        .attr('class', 'line') // for WE DO update
-        .attr('fill', 'none')
-        .attr('stroke', '#60a5fa')
-        .attr('stroke-width', 2)
-        .attr('d', lineGen)
 
       // YOU DO: add circles at each data point and a tooltip on hover
       //
