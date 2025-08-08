@@ -5,33 +5,6 @@
 ## Overview
 Data holds hidden insights, and visualizations unlock their true potential. In this 6-hour workshop, you’ll learn to transform raw datasets into dynamic graphs, charts, and diagrams using HTML, CSS, and JavaScript. We’ll build custom visualizations with **Chart.js** and **D3.js** to make statistical data and mathematical patterns clear and compelling.
 
-## Repository Structure
-```
-
-├── module-1-chartjs
-│   ├── index.html
-│   ├── module-1a.html
-│   ├── module-1b.html
-│   ├── module-1c.html
-│   ├── module-1d.html
-│   ├── module-1e.html
-│   ├── module-1f.html
-│   ├── module-1g.html
-│   ├── module-1h.html
-│   └── module-1i.html
-├── module-2-d3js
-│   ├── index.html
-│   ├── module-2a.html
-│   ├── module-2b.html
-│   ├── module-2c.html
-│   ├── module-2d.html
-│   ├── module-2e.html
-│   ├── module-2f.html
-│   └── module-2g.html
-├── Slides.pdf   # Presentation slides
-└── README.md    # This file
-```
-
 ## Prerequisites
 - Modern web browser (Chrome, Firefox, Safari)
 - Text editor (VS Code, Sublime, etc.)
