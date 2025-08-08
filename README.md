@@ -24,3 +24,4 @@ Slide deck can be found [here]().
 
 ## Solutions to Modules
 - Module 1 [Solutions](https://codepen.io/collection/ojxOwN)
+- Module 2 [Solutions](https://codepen.io/collection/kkbdWa)
