@@ -21,3 +21,6 @@ Data holds hidden insights, and visualizations unlock their true potential. In t
 
 ## Slides
 Slide deck can be found [here]().
+
+## Solutions to Modules
+- Module 1 [Solutions](https://codepen.io/collection/ojxOwN)
