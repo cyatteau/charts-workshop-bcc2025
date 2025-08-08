@@ -13,7 +13,7 @@ Data holds hidden insights, and visualizations unlock their true potential. In t
 ## Modules
 1. **Module 1: Chart.js**  
    Live-code charts and explore configurations. Use the student guide to help you through the You Do and We Do sections.
-   - Try using [these datasets]() for mathematically interesting visualizations!
+   - Try using [these datasets](https://github.com/cyatteau/charts-workshop-bcc2025/blob/main/Module1_Math_Datasets.pdf) for mathematically interesting visualizations!
 2. **Module 2: D3.js**  
    Bind data to DOM, use scales, axes, draw simple shapes, transitions, layouts, and custom interactive visuals.
 
