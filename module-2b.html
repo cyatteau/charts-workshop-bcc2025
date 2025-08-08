@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>2B – Line Charts</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+        padding: 1rem;
+      }
+      svg {
+        max-width: 700px;
+        border: 1px solid #ddd;
+      }
+      circle {
+        fill: steelblue;
+      }
+      .tooltip {
+        position: absolute;
+        padding: 4px 8px;
+        background: rgba(0, 0, 0, 0.7);
+        color: white;
+        font-size: 12px;
+        pointer-events: none;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>2B – Line Charts</h2>
+    <button id="update-btn">Update Data</button>
+    <label>
+      Interpolation:
+      <select id="curve-select">
+        <option value="curveLinear">Linear</option>
+        <option value="curveBasis">Basis</option>
+        <option value="curveStep">Step</option>
+      </select>
+    </label>
+    <svg id="chart" width="700" height="300"></svg>
+    <div id="tooltip" class="tooltip" style="display: none"></div>
+
+    <script>
+      const svg = d3.select('#chart')
+      const width = +svg.attr('width')
+      const height = +svg.attr('height')
+
+      // I DO: basic D3 line chart
+      // 2B – Line Charts
+      const data = [
+        { x: 0, y: 10 },
+        { x: 1, y: 40 },
+        { x: 2, y: 20 },
+        { x: 3, y: 80 },
+        { x: 4, y: 50 }
+      ]
+      const xScale = d3
+        .scaleLinear()
+        .domain(d3.extent(data, d => d.x)) // https://d3js.org/d3-array
+        .range([0, width]) // https://d3js.org/d3-scale
+      const yScale = d3
+        .scaleLinear()
+        .domain([0, d3.max(data, d => d.y)]) // https://d3js.org/d3-array
+        .range([height, 0]) // https://d3js.org/d3-scale
+
+      let curveMethod = d3.curveLinear // default interpolation
+
+      const lineGen = d3
+        .line()
+        .curve(curveMethod) // https://d3js.org/d3-shape
+        .x(d => xScale(d.x))
+        .y(d => yScale(d.y))
+
+      svg
+        .append('path')
+        .datum(data)
+        .attr('class', 'line') // for WE DO update
+        .attr('fill', 'none')
+        .attr('stroke', '#60a5fa')
+        .attr('stroke-width', 2)
+        .attr('d', lineGen)
+
+      // YOU DO: add circles at each data point and a tooltip on hover
+      //
+      // Docs to help you:
+      // • selectAll / enter / append:  https://d3js.org/d3-selection
+      // • mouse events:               https://d3js.org/d3-selection
+      // • tooltip pattern:            https://observablehq.com/@d3/tooltip
+
+      // WE DO: write an updateChart(newData) that
+      //         1) updates the path with transition
+      //         2) updates circles with the new data join
+      //
+      // Docs to help you:
+      // • transitions:                https://d3js.org/d3-transition
+      // • data join (enter–update–exit): https://d3js.org/d3-selection
+
+      // BONUS: let users switch interpolation via the dropdown
+      //
+      // Docs to help you:
+      // • curve types:                https://d3js.org/d3-shape
+      // • responding to events:       https://d3js.org/d3-selection
+    </script>
+  </body>
+</html>

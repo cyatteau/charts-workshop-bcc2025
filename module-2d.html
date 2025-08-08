@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>2D – Force-Directed Graphs</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+        padding: 1rem;
+      }
+      svg {
+        max-width: 700px;
+      }
+      circle {
+        stroke: #333;
+      }
+      line {
+        stroke: #999;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>2D – Force-Directed Graphs</h2>
+    <svg id="chart" width="700" height="400"></svg>
+    <script>
+      // I DO: basic force simulation setup
+      const nodes = [
+        { id: 'A' },
+        { id: 'B' },
+        { id: 'C' },
+        { id: 'D' }
+      ];
+      const links = [
+        { source: 'A', target: 'B' },
+        { source: 'A', target: 'C' },
+        { source: 'B', target: 'D' }
+      ];
+
+      const svg = d3.select('#chart');
+      const width = +svg.attr('width');
+      const height = +svg.attr('height');
+
+      const sim = d3.forceSimulation(nodes)
+        .force('link',
+          d3.forceLink(links).id(d => d.id).distance(100)
+        )
+        .force('charge', d3.forceManyBody().strength(-200))
+        .force('center', d3.forceCenter(width / 2, height / 2));
+
+      // draw links and nodes
+      svg.selectAll('.link')
+        .data(links)
+        .enter().append('line')
+        .attr('class', 'link');
+
+      svg.selectAll('.node')
+        .data(nodes)
+        .enter().append('circle')
+        .attr('class', 'node')
+        .attr('r', 10);
+
+      // update positions on every tick
+      sim.on('tick', () => {
+        svg.selectAll('.link')
+          .attr('x1', d => d.source.x)
+          .attr('y1', d => d.source.y)
+          .attr('x2', d => d.target.x)
+          .attr('y2', d => d.target.y);
+
+        svg.selectAll('.node')
+          .attr('cx', d => d.x)
+          .attr('cy', d => d.y);
+      });
+
+      // YOU DO: add labels and native tooltips
+      //    • append <title> to each circle
+      //    • append <text> for each node (positioned above)
+      //
+      // WE DO: tweak forces for a more compact layout
+      //    • adjust charge strength & link distance
+      //    • reheats the simulation
+      //
+      // BONUS: node addition/removal
+      //    • demonstrate adding a new node/link
+      //    • update simulation and redraw
+    </script>
+  </body>
+</html>

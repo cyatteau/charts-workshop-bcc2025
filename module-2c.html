@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>2C – Hierarchical Layouts</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+        padding: 1rem;
+      }
+      svg {
+        max-width: 700px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>2C – Hierarchical Layouts</h2>
+    <svg id="chart" width="700" height="400"></svg>
+    <script>
+      // I DO: pack layout using d3.hierarchy and d3.pack
+      // 2C – Hierarchical Layouts (Circle Pack)
+      const data = {
+        // Hierarchy root with children
+        name: 'root',
+        children: [
+          { name: 'A', value: 10 },
+          { name: 'B', value: 30 },
+          { name: 'C', value: 20 }
+        ]
+      }
+      const svg = d3.select('#chart') // Selects the SVG container
+      const root = d3
+        .hierarchy(data) // Converts to D3 hierarchy
+        .sum(d => d.value) // Sums up leaf values
+      d3.pack().size([700, 400]).padding(5)(root) // Runs pack layout
+
+      svg
+        .selectAll('circle') // Binds each node
+        .data(root.descendants()) // Flattens hierarchy
+        .enter()
+        .append('circle') // Creates a circle
+        .attr('cx', d => d.x) // X-position from layout
+        .attr('cy', d => d.y) // Y-position from layout
+        .attr('r', d => d.r) // Radius from layout
+        .attr('fill', d => (d.children ? '#60a5fa' : '#93c5fd')) // Parent vs. leaf color
+
+      // YOU DO: switch to tree or partition layout
+      // WE DO: add labels for each node
+      // BONUS: color by depth
+    </script>
+  </body>
+</html>

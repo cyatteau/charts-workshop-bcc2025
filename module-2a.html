@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>2A – Bar Charts</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+        padding: 1rem;
+      }
+      svg {
+        max-width: 700px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>2A – Bar Charts</h2>
+    <svg id="chart" width="700" height="300"></svg>
+    <script>
+      const svg = d3.select('#chart')
+      const width = +svg.attr('width') // + converts string to a number
+      const height = +svg.attr('height')
+
+      // I DO: quick gray bars to demonstrate
+      // YOU DO: load CSV/JSON and adapt scales domain
+      // WE DO: add text labels atop bars
+      // BONUS: add hover transition and color scale
+    </script>
+  </body>
+</html>

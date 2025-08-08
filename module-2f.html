@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>2F – Scales & Axes Deep Dive</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+        padding: 1rem;
+      }
+      svg {
+        max-width: 700px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>2F – Scales & Axes Deep Dive</h2>
+    <svg id="chart" width="700" height="300"></svg>
+    <script>
+      // I DO: demonstrate log scale axis
+      // 2F – Scales & Axes Deep Dive (Log Scale)
+      const data = [0.1, 1, 10, 100, 1000] // Sample data spanning orders of magnitude
+      const svg = d3.select('#chart') // Selects the SVG container
+      const xLog = d3
+        .scaleLog() // Creates logarithmic scale
+        .domain(d3.extent(data)) // Domain: [min, max] of data
+        .range([0, 640]) // Range spans inner width
+
+      svg
+        .append('g') // Appends a group for axis
+        .attr('transform', 'translate(60,240)') // Positions axis at bottom
+        .call(
+          d3
+            .axisBottom(xLog) // Generates bottom axis
+            .ticks(5, '~s') // 5 ticks with SI-prefix formatting
+        )
+
+      // YOU DO: create sqrt and power scales
+      // WE DO: add secondary axis and labels
+      // BONUS: zoomable axis
+    </script>
+  </body>
+</html>
