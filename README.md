@@ -3,7 +3,7 @@
 **Beer City Code 2025** | **8 Aug 2025, 9:00 am ET**
 
 ## Overview
-Data holds hidden insights, and visualizations unlock their true potential. In this 6-hour workshop, you’ll learn to transform raw datasets into dynamic graphs, charts, and diagrams using HTML, CSS, and JavaScript. We’ll build custom visualizations with **Chart.js** and **D3.js** to make statistical data and mathematical patterns clear and compelling.
+Data holds hidden insights, and visualizations unlock their true potential. In this workshop, you’ll learn to transform raw datasets into dynamic graphs, charts, and diagrams using HTML, CSS, and JavaScript. We’ll build custom visualizations with **Chart.js** and **D3.js** to make statistical data and mathematical patterns clear and compelling.
 
 ## Prerequisites
 - Modern web browser (Chrome, Firefox, Safari)
